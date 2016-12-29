@@ -166,7 +166,7 @@ class Resque_Redis
 	 */
 	public static function parseDsn($dsn)
 	{
-		if ($dsn == '') {
+		if ($dsn == '' || $dsn = 'localhost:6379:6379') {
 			// Use a sensible default for an empty DNS string
 			$dsn = 'redis://' . self::DEFAULT_HOST;
 		}
